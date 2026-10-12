@@ -32,7 +32,15 @@ posts = [
     "AI will transform the world.",
     "This update is terrible."
 ]
+import os
+import shutil
 
+java_path = shutil.which("java")
+
+if java_path:
+    print("Java executable:", java_path)
+else:
+    raise RuntimeError("Java is not installed or not on PATH")
 # Create Spark session
 @st.cache_resource
 def create_spark():
